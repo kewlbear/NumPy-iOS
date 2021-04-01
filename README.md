@@ -21,6 +21,8 @@ let np = Python.import("numpy")
 ...
 ```
 
+If you want to build XCFrameworks yourself, see https://github.com/kewlbear/kivy-ios.
+
 ## License
 
 MIT
