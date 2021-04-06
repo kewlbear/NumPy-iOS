@@ -13,9 +13,9 @@ let package = Package(
         .package(url: "https://github.com/kewlbear/Python-iOS.git", .branch("kivy-ios")),
     ],
     targets: [
-        .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210401061219/libnumpy.xcframework.zip", checksum: "a97451931ce6d83daebd12e29890af2f109ab8df0549b1ec320f5ea933de373d"),
-        .binaryTarget(name: "libnpymath", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210401061219/libnpymath.xcframework.zip", checksum: "197f512f3e95c3639d848d516fdffc37bad9bfc052d252fd15320aa2712ae1ae"),
-        .binaryTarget(name: "libnpysort", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210401061219/libnpysort.xcframework.zip", checksum: "a435d41bf22a89b8b3d8126ce6ec650a44b71344bd1335038829a6b9a8350dc5"),
+        .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210406050242/libnumpy.xcframework.zip", checksum: "2f784e2a7ce6b612f20d0d2d16a8b715822ddd69f3b87458a7eb8d9aab9f750b"),
+        .binaryTarget(name: "libnpymath", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210406050242/libnpymath.xcframework.zip", checksum: "c8e5e2952bb681163e332f42f3e19f3db225dffdabbebb9a003ca9520f516a5c"),
+        .binaryTarget(name: "libnpysort", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210406050242/libnpysort.xcframework.zip", checksum: "6d907e3db2cccbf78a37b9a582bef18acfb3038e466f7a385bb2239193b9c095"),
         .target(
             name: "Link",
             dependencies: ["libnumpy", "libnpymath", "libnpysort", "Python-iOS"],
