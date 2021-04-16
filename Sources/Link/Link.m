@@ -23,6 +23,7 @@
 //
 
 #import <Python.h>
+#import <PythonSupport.h>
 
 PyMODINIT_FUNC PyInit__multiarray_umath(void);
 PyMODINIT_FUNC PyInit_lapack_lite(void);
@@ -30,12 +31,9 @@ PyMODINIT_FUNC PyInit__umath_linalg(void);
 PyMODINIT_FUNC PyInit_fftpack_lite(void);
 PyMODINIT_FUNC PyInit_mtrand(void);
 
-typedef PyMODINIT_FUNC(*initfunc_t)(void);
-
-initfunc_t numpy_initfuncs[] = {
-    PyInit__multiarray_umath,
-    PyInit_lapack_lite,
-    PyInit__umath_linalg,
-    PyInit_fftpack_lite,
-    PyInit_mtrand,
-};
+ForceLink(NumPy,
+          PyInit__multiarray_umath();
+          PyInit_lapack_lite();
+          PyInit__umath_linalg();
+          PyInit_fftpack_lite();
+          PyInit_mtrand())
