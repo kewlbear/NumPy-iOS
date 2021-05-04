@@ -7,18 +7,18 @@ let package = Package(
     products: [
         .library(
             name: "NumPy-iOS",
-            targets: ["libnumpy", "libnpymath", "libnpysort", "Link", "NumPySupport"]),
+            targets: ["libnumpy", "libnpymath", "libnpyrandom", "Link", "NumPySupport"]),
     ],
     dependencies: [
         .package(url: "https://github.com/kewlbear/Python-iOS.git", .branch("kivy-ios")),
     ],
     targets: [
-        .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504044654/libnumpy.xcframework.zip", checksum: "a116e5d00eefa1e75df04c1d5e1a64b34e5ce492e6c03d63b8dc07beee95c5de"),
-        .binaryTarget(name: "libnpymath", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504044654/libnpymath.xcframework.zip", checksum: "76b3025b9c90dc0fd7cc3f733156abb806b31820d5570048f348f11886570383"),
-        .binaryTarget(name: "libnpysort", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504044654/libnpysort.xcframework.zip", checksum: "libnpysort.xcframework_CHECKSUM"),
+        .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504052912/libnumpy.xcframework.zip", checksum: "0ce9e9f25e127b2f2925d2046b2ac5cb0ccaa6651b64541f16b24baf81c7094b"),
+        .binaryTarget(name: "libnpymath", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504052912/libnpymath.xcframework.zip", checksum: "a2385b000e873692b4a25f891be0896518bace00bc855f4d41a1e6a4f7011eeb"),
+        .binaryTarget(name: "libnpyrandom", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/0.0.20210504052912/libnpyrandom.xcframework.zip", checksum: "2e34f4f9105c1e488597c4c5e808b5adefc3d187fa07b6775bb4f0714481fe6e"),
         .target(
             name: "Link",
-            dependencies: ["libnumpy", "libnpymath", "libnpysort", "Python-iOS"],
+            dependencies: ["libnumpy", "libnpymath", "libnpyrandom", "Python-iOS"],
             linkerSettings: [.linkedFramework("Accelerate")]),
         .target(
             name: "NumPySupport",
