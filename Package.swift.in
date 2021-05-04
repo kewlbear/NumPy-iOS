@@ -7,7 +7,7 @@ let package = Package(
     products: [
         .library(
             name: "NumPy-iOS",
-            targets: ["libnumpy", "libnpymath", "libnpysort", "Link", "NumPySupport"]),
+            targets: ["libnumpy", "libnpymath", "libnpyrandom", "Link", "NumPySupport"]),
     ],
     dependencies: [
         .package(url: "https://github.com/kewlbear/Python-iOS.git", .branch("kivy-ios")),
@@ -15,10 +15,10 @@ let package = Package(
     targets: [
         .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/TAG/libnumpy.xcframework.zip", checksum: "libnumpy.xcframework_CHECKSUM"),
         .binaryTarget(name: "libnpymath", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/TAG/libnpymath.xcframework.zip", checksum: "libnpymath.xcframework_CHECKSUM"),
-        .binaryTarget(name: "libnpysort", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/TAG/libnpysort.xcframework.zip", checksum: "libnpysort.xcframework_CHECKSUM"),
+        .binaryTarget(name: "libnpyrandom", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/TAG/libnpyrandom.xcframework.zip", checksum: "libnpyrandom.xcframework_CHECKSUM"),
         .target(
             name: "Link",
-            dependencies: ["libnumpy", "libnpymath", "libnpysort", "Python-iOS"],
+            dependencies: ["libnumpy", "libnpymath", "libnpyrandom", "Python-iOS"],
             linkerSettings: [.linkedFramework("Accelerate")]),
         .target(
             name: "NumPySupport",
