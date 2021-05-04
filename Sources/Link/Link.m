@@ -23,17 +23,51 @@
 //
 
 #import <Python.h>
-#import <PythonSupport.h>
+@import Foundation;
+
+#define ForceLink(package, ...) \
+@interface ForceLink##package : NSObject { \
+    void **_symbols; \
+} \
+@end \
+\
+@implementation ForceLink##package { \
+    ; \
+} \
+- (void)foo { \
+    static void *symbols[] = { __VA_ARGS__ }; \
+    _symbols = symbols; \
+} \
+@end
 
 PyMODINIT_FUNC PyInit__multiarray_umath(void);
+PyMODINIT_FUNC PyInit__multiarray_tests(void);
 PyMODINIT_FUNC PyInit_lapack_lite(void);
 PyMODINIT_FUNC PyInit__umath_linalg(void);
-PyMODINIT_FUNC PyInit_fftpack_lite(void);
+PyMODINIT_FUNC PyInit__pocketfft_internal(void);
 PyMODINIT_FUNC PyInit_mtrand(void);
+PyMODINIT_FUNC PyInit_bit_generator(void);
+PyMODINIT_FUNC PyInit__common(void);
+PyMODINIT_FUNC PyInit__bounded_integers(void);
+PyMODINIT_FUNC PyInit__mt19937(void);
+PyMODINIT_FUNC PyInit__philox(void);
+PyMODINIT_FUNC PyInit__pcg64(void);
+PyMODINIT_FUNC PyInit__sfc64(void);
+PyMODINIT_FUNC PyInit__generator(void);
 
 ForceLink(NumPy,
-          PyInit__multiarray_umath();
-          PyInit_lapack_lite();
-          PyInit__umath_linalg();
-          PyInit_fftpack_lite();
-          PyInit_mtrand())
+          PyInit__multiarray_umath,
+          PyInit__multiarray_tests,
+          PyInit_lapack_lite,
+          PyInit__umath_linalg,
+          PyInit__pocketfft_internal,
+          PyInit_mtrand,
+          PyInit_bit_generator,
+          PyInit__common,
+          PyInit__bounded_integers,
+          PyInit__mt19937,
+          PyInit__philox,
+          PyInit__pcg64,
+          PyInit__sfc64,
+          PyInit__generator,
+          )
