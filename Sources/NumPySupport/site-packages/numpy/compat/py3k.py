@@ -20,10 +20,6 @@ import sys
 import os
 from pathlib import Path
 import io
-
-import abc
-from abc import ABC as abc_ABC
-
 try:
     import pickle5 as pickle
 except ImportError:
@@ -94,6 +90,9 @@ class contextlib_nullcontext:
     cm = optional_cm if condition else nullcontext()
     with cm:
         # Perform operation, using optional_cm if condition is True
+
+    .. note::
+        Prefer using `contextlib.nullcontext` instead of this context manager.
     """
 
     def __init__(self, enter_result=None):
@@ -108,7 +107,9 @@ class contextlib_nullcontext:
 
 def npy_load_module(name, fn, info=None):
     """
-    Load a module.
+    Load a module. Uses ``load_module`` which will be deprecated in python
+    3.12. An alternative that uses ``exec_module`` is in
+    numpy.distutils.misc_util.exec_mod_from_location
 
     .. versionadded:: 1.11.2
 

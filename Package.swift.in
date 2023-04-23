@@ -10,7 +10,7 @@ let package = Package(
             targets: ["libnumpy", "libnpymath", "libnpyrandom", "Link", "NumPySupport"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/kewlbear/Python-iOS.git", .branch("kivy-ios")),
+        .package(url: "https://github.com/kewlbear/Python-iOS.git", from: "0.1.1-b"),
     ],
     targets: [
         .binaryTarget(name: "libnumpy", url: "https://github.com/kewlbear/NumPy-iOS/releases/download/TAG/libnumpy.xcframework.zip", checksum: "libnumpy.xcframework_CHECKSUM"),

@@ -22,6 +22,7 @@
 		4CE34E6325E7847500BD9079 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CE34E6625E7847500BD9079 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4CE34E6825E7847500BD9079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18DE24F29F5231E007E208C /* NumPy-iOS */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "NumPy-iOS"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		4CE34E5325E7847000BD9079 = {
 			isa = PBXGroup;
 			children = (
+				E18DE24F29F5231E007E208C /* NumPy-iOS */,
 				4CE34E5E25E7847000BD9079 /* Example */,
 				4CE34E5D25E7847000BD9079 /* Products */,
 			);
